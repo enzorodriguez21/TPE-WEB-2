@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-09-2024 a las 23:24:39
+-- Tiempo de generación: 26-09-2024 a las 00:45:59
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -29,10 +29,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `clientes` (
   `id` int(11) NOT NULL,
-  `nombre` int(11) NOT NULL,
-  `apellido` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `apellido` varchar(50) NOT NULL,
   `edad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `clientes`
+--
+
+INSERT INTO `clientes` (`id`, `nombre`, `apellido`, `edad`) VALUES
+(1, 'Juan', 'Pérez', 30),
+(2, 'María', 'Gómez', 25),
+(3, 'Carlos', 'Ramírez', 28),
+(4, 'Ana', 'Fernández', 22);
 
 -- --------------------------------------------------------
 
@@ -47,6 +57,16 @@ CREATE TABLE `ventas` (
   `monto` int(11) NOT NULL,
   `cliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `ventas`
+--
+
+INSERT INTO `ventas` (`id`, `producto`, `unidad`, `monto`, `cliente`) VALUES
+(1, 'Vodka', 2, 1500, 1),
+(2, 'Balbo', 1, 800, 2),
+(3, 'Fernet', 1, 1200, 3),
+(4, 'Gancia', 3, 90, 4);
 
 --
 -- Índices para tablas volcadas
@@ -73,13 +93,13 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
